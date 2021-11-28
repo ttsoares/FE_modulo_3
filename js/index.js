@@ -27,9 +27,10 @@ async function testCredentials(Uname, Pass) {
     ClockAnim.classList.add("invisible");
 
     indice_user = response.data
-    sessionStorage.setItem("indice", indice_user);
-    sessionStorage.setItem("name", Uname);
-    location.href = "./messages.html";
+    //sessionStorage.setItem("indice", indice_user);
+    //sessionStorage.setItem("name", Uname);
+
+    location.href = `./messages.html?${indice_user}|${Uname}`;
 
   })
   .catch(function (error) {

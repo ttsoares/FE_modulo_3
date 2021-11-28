@@ -1,5 +1,11 @@
-let Uindice = sessionStorage.getItem("indice");
-let nameUser = sessionStorage.getItem("name");
+const queryString = location.search.substring(1);
+const parms = queryString.split("|");
+
+let Uindice = parms[0]
+let nameUser = parms[1]
+
+//let Uindice = sessionStorage.getItem("indice");
+//let nameUser = sessionStorage.getItem("name");
 let messages = []
 let id;
 

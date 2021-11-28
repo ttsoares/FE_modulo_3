@@ -3,10 +3,11 @@ function NewUser() {
   let Password1 = (document.getElementById("passWord_1").value);
   let Password2 = (document.getElementById("passWord_2").value);
 
+
   let test_Username = Username.replace(/\s/g, ''); // remove spaces
 
   //The MD5 hash bellow is the result of an empty string for password
-  if (test_Username=='' || Password1 == 'd41d8cd98f00b204e9800998ecf8427e' || Password2=='d41d8cd98f00b204e9800998ecf8427e') {
+  if (test_Username=='') {
     // Empty user fields are not allowed
     const Empty = new bootstrap.Modal(document.getElementById('empty_field'));
     Empty.show();
@@ -24,12 +25,23 @@ function NewUser() {
 }
 
 async function criaUser(Uname, Pass) {
+  const ClockAnim = (document.getElementById("div-clock"))
+
   try {
+    ClockAnim.classList.remove("invisible");
+    ClockAnim.classList.add("visible");
+
     await axios.post(`${url}/user`, {name: Uname, pass: Pass});
+    ClockAnim.classList.remove("visible");
+    ClockAnim.classList.add("invisible");
+
     const Success = new bootstrap.Modal(document.getElementById('success'));
     Success.show();
     return
   } catch (error) {
+    ClockAnim.classList.remove("visible");
+    ClockAnim.classList.add("invisible");
+
     const Failure = new bootstrap.Modal(document.getElementById('user_exists'));
     Failure.show();
     return

@@ -15,10 +15,11 @@
 
 <body>
 
-  <div class="d-flex justify-content-center">
+  <header class="d-flex justify-content-center">
     <h1>Log In</h1>
-  </div>
-  <div class="externa">
+  </header>
+
+  <section class="externa">
     <div class="interna">
 
       <form class="mt-3">
@@ -34,12 +35,20 @@
         <button id="myBtn" class="btn btn-primary rounded-pill" onclick="getInputValues();">Sign In</button>
       </div>
 
-      <div class="px-0 mt-2 container d-flex">
-        <p class="pe-2 text-secondary">Don't have an account ?</p>
-        <a href="newuser.html">Sign Up</a>
+
+      <footer>
+        <div class="px-0 mt-2 container d-flex">
+          <p class="pe-2 text-secondary">Don't have an account ?</p>
+          <a href="newuser.html">Sign Up</a>
+        </div>
+      </footer>
+
+      <div id="div-clock" class="invisible position-absolute top-30 start-50 translate-middle">
+        <img class="clock" src="imgs/loading.jpg" alt="">
       </div>
+
     </div>
-  </div>
+  </section>
 
 <!-- Modal -->
 <div class="modal fade" id="credentials" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

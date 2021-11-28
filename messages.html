@@ -13,25 +13,26 @@
 
   <div class="container-fluid">
 
-    <div class="header container-fluid d-flex flex-row ">
+    <header class="header container-fluid d-flex flex-row ">
       <h1 class="me-5">Your Messages</h1>
       <span class="me-auto display-1" id="userName"></span>
       <button type="button" class="ms-auto btn btn-outline-success rounded-pill" onclick="logout();">Log Out
       </button>
-    </div>
-      <div class="row ms-3 mt-4 input-group">
-        <div class="col-3">
-          <input type="text" id="desCrip" class="form-control" placeholder="Description" aria-label="Description">
-        </div>
-        <div class="col-8">
-          <input type="text" id="detAil" class="form-control" placeholder="Details" aria-label="Details">
-        </div>
-        <div class="col-1">
-          <button class="btn btn-primary" onclick="saveData();">Save</button>
-        </div>
-      </div>
+    </header>
 
-    <div id="messages" class="mt-4"></div>
+    <section class="row ms-3 mt-4 input-group">
+      <div class="col-3">
+        <input type="text" id="desCrip" class="form-control" placeholder="Description" aria-label="Description">
+      </div>
+      <div class="col-8">
+        <input type="text" id="detAil" class="form-control" placeholder="Details" aria-label="Details">
+      </div>
+      <div class="col-1">
+        <button class="btn btn-primary" onclick="saveData();">Save</button>
+      </div>
+    </section>
+
+    <main id="messages" class="mt-4"></main>
   </div>
 
   <!-- Modal EDIT -->

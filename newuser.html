@@ -12,16 +12,16 @@
 </head>
 <body>
 
-  <div class="d-flex justify-content-center">
+  <header class="d-flex justify-content-center">
     <h1 class="m-0">New User</h1>
-  </div>
+  </header>
 
   <div class="btnBack">
     <button type="button" class="btn btn-outline-success rounded-pill" onclick="logout();">Back
     </button>
   </div>
 
-  <div class="externa">
+  <section class="externa">
     <div class="interna">
       <form>
         <label for="userName"><h5><u>User Name</u></h5></label>
@@ -38,8 +38,12 @@
         <button id="myBtn" class="btn btn-primary rounded-pill" onclick="NewUser();">SUBMIT</button>
       </div>
 
+      <div id="div-clock" class="invisible position-absolute top-40 start-50 translate-middle">
+        <img class="clock" src="imgs/loading.jpg" alt="">
+      </div>
+
     </div>
-  </div>
+  </section>
 
   !-- Modal passwords not equal-->
   <div class="modal fade" id="passModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

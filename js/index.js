@@ -14,11 +14,18 @@ function getInputValues() {
 }
 
 async function testCredentials(Uname, Pass) {
-  console.log("testCredentials")
-  console.log(Uname, Pass)
+
+  const ClockAnim = (document.getElementById("div-clock"))
+
+  ClockAnim.classList.remove("invisible");
+  ClockAnim.classList.add("visible");
 
   await axios.put(`${url}/pass`, {name: Uname, pass: Pass})
   .then(function (response) {
+
+    ClockAnim.classList.remove("visible");
+    ClockAnim.classList.add("invisible");
+
     indice_user = response.data
     sessionStorage.setItem("indice", indice_user);
     sessionStorage.setItem("name", Uname);
@@ -26,6 +33,9 @@ async function testCredentials(Uname, Pass) {
 
   })
   .catch(function (error) {
+    ClockAnim.classList.remove("visible");
+    ClockAnim.classList.add("invisible");
+
     var Credentials = new bootstrap.Modal(document.getElementById('credentials'));
     Credentials.show();
   })

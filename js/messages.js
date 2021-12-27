@@ -4,8 +4,6 @@ const parms = queryString.split("|");
 let Uindice = parms[0]
 let nameUser = parms[1]
 
-//let Uindice = sessionStorage.getItem("indice");
-//let nameUser = sessionStorage.getItem("name");
 let messages = []
 let id;
 
@@ -40,7 +38,7 @@ async function show_msgs () {
 
 async function remove() {
   id = this.getAttribute('id');
-  id = +id.slice(0,1) //  remove the "D" from de id
+  id = +id.slice(0,-1) //  remove the "D" from de id
 
   await axios.delete(`${url}/user/${Uindice}/message/${id}`)
     .then(function (response) {
@@ -55,7 +53,7 @@ async function remove() {
 // start edition process
 async function edit() {
   id = this.getAttribute('id');
-  id = +id.slice(0,1); //  remove the "E" from de id
+  id = +id.slice(0,-1); //  remove the "E" from de id
 
   await axios.get(`${url}/user/${Uindice}/message/${id}`)
     .then(function (response) {
